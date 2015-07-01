@@ -1,0 +1,22 @@
+
+- name: Install Intellij IDEA Ultimate Edition
+  homebrew_cask: name=intellij-idea
+
+- name: Install Intellij IDEA Community Edition
+  homebrew_cask: name=intellij-idea-ce
+
+- name: Install Intellij IDEA Ultimate Edition EAP
+  homebrew_cask: name=intellij-idea-eap
+
+- name: Install Intellij IDEA Community Edition EAP
+  homebrew_cask: name=intellij-idea-ce-eap
+
+- name: Ensure IDEAs preferences directory is present
+  file:
+    path: "~/Library/Preferences/IntelliJIdea14"
+    state: directory
+
+- name: Configure IDEAs JVM options
+  template:
+    src: idea.vmoptions.j2
+    dest: "~/Library/Preferences/IntelliJIdea14/idea.vmoptions"

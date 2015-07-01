@@ -1,0 +1,33 @@
+- name: Install Virtualbox
+  homebrew_cask: name=virtualbox
+
+- name: Install vagrant
+  homebrew_cask: name=vagrant
+
+# Install VirtualBox Guest Additions
+# vagrant plugin install vagrant-vbguest
+
+- name: Install boot2docker
+  homebrew: name=boot2docker
+
+- name: Install docker-compose
+  homebrew_cask: name=docker-compose
+
+
+#To have launchd start boot2docker at login:
+#    ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents
+#Then to load boot2docker now:
+#    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.boot2docker.plist    
+
+# http://blog.javabien.net/2014/03/03/setup-docker-on-osx-the-no-brainer-way/
+# boot2docker init
+# boot2docker up
+
+#To connect the Docker client to the Docker daemon, please set:
+#    export DOCKER_HOST=tcp://192.168.59.103:2376
+#    export DOCKER_CERT_PATH=/Users/jfischer/.boot2docker/certs/boot2docker-vm
+#    export DOCKER_TLS_VERIFY=1
+
+
+- name: Install packer
+  homebrew_cask: name=packer

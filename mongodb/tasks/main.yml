@@ -1,0 +1,3 @@
+- name: Install MongoDB
+  homebrew: name=mongodb
+

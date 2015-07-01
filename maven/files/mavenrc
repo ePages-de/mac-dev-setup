@@ -1,0 +1,2 @@
+export MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=2g"
+echo "MAVEN_OPTS: $MAVEN_OPTS"

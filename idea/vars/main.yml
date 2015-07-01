@@ -1,0 +1,4 @@
+stack_size: 1g
+heap_size: 4g
+max_perm_size: 750m
+reserved_code_cache_size: 96m

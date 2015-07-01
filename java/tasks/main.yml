@@ -1,0 +1,3 @@
+- name: Install Oracle JDK 8
+  homebrew_cask: name=java
+

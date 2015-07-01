@@ -1,0 +1,10 @@
+---
+
+- name: Install node.js
+  homebrew: name=node
+
+- name: Install Grunt
+  npm: name=grunt-cli state=present global=yes
+
+- name: Install local-web-server
+  npm: name=local-web-server state=present global=yes

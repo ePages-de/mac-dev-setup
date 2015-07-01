@@ -1,0 +1,12 @@
+- name: Install gradle
+  homebrew: name=gradle
+
+- name: Ensure local .gradle directory is present
+  file:
+    path: "~/.gradle"
+    state: directory
+
+- name: Ensure gradle.properties is present
+  copy:
+    src: gradle.properties
+    dest: "~/.gradle/gradle.properties"

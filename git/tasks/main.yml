@@ -1,0 +1,23 @@
+- name: Install git and tools
+  homebrew: name={{item}}
+  with_items:
+    - git
+    - git-flow
+    - tig
+
+- name: Install SourceTree
+  homebrew_cask: name=sourcetree
+
+#- name: Install lolcommits
+#  sudo: no
+#  gem: name=lolcommits state=present
+
+- name: Ensure .gitconfig is present
+  copy:
+    src: .gitconfig
+    dest: "~/.gitconfig"
+
+- name: Ensure .gitignore is present
+  copy:
+    src: .gitignore
+    dest: "~/.gitignore"

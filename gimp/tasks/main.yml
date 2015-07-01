@@ -1,0 +1,4 @@
+---
+
+- name: Install gimp
+  homebrew_cask: name=gimp

@@ -1,0 +1,10 @@
+- name: Install mysql client
+  homebrew: name=mysql install_options=client-only,universal
+
+- name: Ensure .my.cnf is present
+  copy:
+    src: .my.cnf
+    dest: "~/.my.cnf"
+
+- name: Install mysql workbench
+  homebrew_cask: name=mysqlworkbench

@@ -1,0 +1,88 @@
+---
+
+- name: Add homebrew versions repo
+  homebrew_tap: tap=homebrew/versions state=present
+
+- name: Add homebrew cask repo
+  homebrew_tap: tap=caskroom/cask state=present
+
+- name: Add homebrew cask versions repo
+  homebrew_tap: tap=caskroom/versions state=present
+
+- name: Install homebrew cask
+  homebrew: name=brew-cask
+
+- name: Install common tools
+  homebrew: name={{item}}
+  with_items:
+    - gcc
+    - tmux
+    - tree
+    - zsh
+    - fasd
+    - wget
+    - dos2unix
+    - xz
+    - md5sha1sum
+    - htop-osx
+    - bash-completion
+    - imagemagick
+    - httpie
+    - cowsay
+    - ssh-copy-id
+    - ffmpeg
+
+- name: Install common binary tools
+  homebrew_cask: name={{item}}
+  with_items:
+    - hipchat
+    - firefox
+    - google-chrome
+    - google-chrome-canary
+    - iterm2
+    - sublime-text
+    - macdown
+    - skype
+    - disk-inventory-x
+    - dash
+    - teamviewer
+    - spotify
+    - deezer
+    - boxcryptor-classic
+    - vlc
+    - libreoffice
+    - dropbox
+    - google-drive
+    - tunnelblick
+    - real-vnc
+    - mpeg-streamclip
+
+- name: Ensure local hostname is in /etc/hosts
+  sudo: yes
+  lineinfile:
+    dest: "/etc/hosts"
+    line: "127.0.0.1 jfischer-mac"
+
+- name: Ensure HostName is set
+  sudo: yes
+  shell: scutil --set HostName jfischer-mac
+
+- name: Ensure LocalHostName is set
+  sudo: yes
+  shell: scutil --set LocalHostName jfischer-mac
+
+- name: Ensure ComputerName is set
+  sudo: yes
+  shell: scutil --set ComputerName jfischer-mac
+
+- name: Ensure launchd.conf is present
+  sudo: yes
+  copy:
+    src: launchd.conf
+    dest: "/etc/launchd.conf"
+
+- name: Ensure .bash_profile is present
+  sudo: no
+  copy:
+    src: .bash_profile
+    dest: "~/.bash_profile"

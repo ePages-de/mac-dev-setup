@@ -1,0 +1,8 @@
+---
+
+- name: Install heroku toolbelt
+  homebrew: name=heroku-toolbelt
+
+- name: Install foreman
+  sudo: yes
+  gem: name=foreman state=present

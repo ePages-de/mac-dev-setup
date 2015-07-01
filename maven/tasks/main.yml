@@ -1,0 +1,23 @@
+- name: Install maven
+  homebrew: name=maven
+
+- name: Ensure local maven directory is present
+  file:
+    path: "~/.m2"
+    state: directory
+
+- name: Ensure maven settings are present
+  copy:
+    src: settings.xml
+    dest: "~/.m2/settings.xml"
+
+- name: Ensure maven settings without mirror are present
+  copy:
+    src: settings-nomirror.xml
+    dest: "~/.m2/settings-nomirror.xml"
+
+#- name: Ensure mavenrc is present
+#  copy:
+#   src: mavenrc
+#    dest: "~/.mavenrc"
+

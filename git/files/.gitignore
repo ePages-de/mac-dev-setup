@@ -1,0 +1,16 @@
+*~
+Session.vim
+.DS_Store
+.project
+.classpath
+.settings
+.externalToolBuilders
+.springBeans
+.pmd
+target
+*.class
+*.jar
+*.war
+*.iml
+.idea
+.vagrant

@@ -1,0 +1,16 @@
+- hosts: local
+  roles:
+    - common
+    - ruby
+    - git
+    - java
+    - maven
+    - gradle
+    - eclipse
+    - idea
+    - virtualbox
+    - mysql
+    - mongodb
+    - heroku
+    - gimp
+    - node
