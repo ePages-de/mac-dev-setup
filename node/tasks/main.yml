@@ -8,3 +8,6 @@
 
 - name: Install local-web-server
   npm: name=local-web-server state=present global=yes
+
+- name: Install Ember
+  npm: name=ember-cli state=present global=yes
