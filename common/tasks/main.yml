@@ -56,6 +56,7 @@
     - tunnelblick
     - real-vnc
     - mpeg-streamclip
+    - adium
 
 - name: Ensure local hostname is in /etc/hosts
   sudo: yes
