@@ -1,15 +1,15 @@
 
-- name: Install Intellij IDEA Ultimate Edition
-  homebrew_cask: name=intellij-idea
+#- name: Install Intellij IDEA Ultimate Edition
+#  homebrew_cask: name=intellij-idea
 
 - name: Install Intellij IDEA Community Edition
   homebrew_cask: name=intellij-idea-ce
 
-- name: Install Intellij IDEA Ultimate Edition EAP
-  homebrew_cask: name=intellij-idea-eap
+#- name: Install Intellij IDEA Ultimate Edition EAP
+#  homebrew_cask: name=intellij-idea-eap
 
-- name: Install Intellij IDEA Community Edition EAP
-  homebrew_cask: name=intellij-idea-ce-eap
+#- name: Install Intellij IDEA Community Edition EAP
+#  homebrew_cask: name=intellij-idea-ce-eap
 
 - name: Ensure IDEAs preferences directory is present
   file:
@@ -20,3 +20,5 @@
   template:
     src: idea.vmoptions.j2
     dest: "~/Library/Preferences/IntelliJIdea14/idea.vmoptions"
+
+# TODO: idea.case.sensitive.fs=true in /opt/homebrew-cask/Caskroom/intellij-idea-ce/14.1.4/IntelliJ\ IDEA\ 14\ CE.app/Contents/bin/idea.properties
