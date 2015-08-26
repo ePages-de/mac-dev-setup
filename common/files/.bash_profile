@@ -31,9 +31,11 @@ export LOLCOMMITS_DELAY=2
 export APT_PROXY=http://192.168.59.4:8000
 
 #To connect the Docker client to the Docker daemon, please set:
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/jfischer/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+#export DOCKER_HOST=tcp://192.168.59.103:2376
+#export DOCKER_CERT_PATH=/Users/jfischer/.boot2docker/certs/boot2docker-vm
+#export DOCKER_TLS_VERIFY=1
+eval "$(docker-machine env docker-vm)"
+
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 

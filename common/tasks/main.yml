@@ -58,6 +58,7 @@
     - mpeg-streamclip
     - adium
     - burn
+    - google-hangouts
 
 - name: Ensure local hostname is in /etc/hosts
   sudo: yes

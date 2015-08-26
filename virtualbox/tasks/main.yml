@@ -10,6 +10,12 @@
 - name: Install boot2docker
   homebrew: name=boot2docker
 
+- name: Install docker-machine
+  homebrew: name=docker-machine
+
+- name: Install docker-swarm
+  homebrew: name=docker-swarm
+
 - name: Install docker-compose
   homebrew_cask: name=docker-compose
 

@@ -8,3 +8,6 @@
 
 - name: Install mysql workbench
   homebrew_cask: name=mysqlworkbench
+
+#- name: Install DbVisualizer
+#  homebrew_cask: name=dbvisualizer

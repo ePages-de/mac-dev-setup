@@ -4,6 +4,7 @@
     - git
     - git-flow
     - tig
+    - hub
 
 - name: Install SourceTree
   homebrew_cask: name=sourcetree
