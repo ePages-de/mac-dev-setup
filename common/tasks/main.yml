@@ -31,12 +31,18 @@
     - cowsay
     - ssh-copy-id
     - ffmpeg
+    - lame
+    - watch
+    - nmap
+    - gifsicle
+    - sysdig
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}
   with_items:
     - hipchat
     - firefox
+    - thunderbird
     - google-chrome
     - google-chrome-canary
     - iterm2
@@ -59,6 +65,11 @@
     - adium
     - burn
     - google-hangouts
+    - audacity210
+    - imageoptim
+    - logitech-harmony
+    - logitech-myharmony
+    - atom
 
 - name: Ensure local hostname is in /etc/hosts
   sudo: yes

@@ -9,6 +9,9 @@
 - name: Install SourceTree
   homebrew_cask: name=sourcetree
 
+- name: Install GitUp
+  homebrew_cask: name=gitup
+
 #- name: Install lolcommits
 #  sudo: no
 #  gem: name=lolcommits state=present

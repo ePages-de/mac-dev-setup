@@ -37,3 +37,6 @@
 
 - name: Install packer
   homebrew_cask: name=packer
+
+- name: Install kubernetes-cli
+  homebrew: name=kubernetes-cli
