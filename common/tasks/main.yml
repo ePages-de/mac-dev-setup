@@ -32,6 +32,7 @@
     - watch
     - nmap
     - sysdig
+    - hub
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}
