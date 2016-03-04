@@ -32,7 +32,6 @@
     - watch
     - nmap
     - sysdig
-    - hub
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}
@@ -54,6 +53,7 @@
     - google-drive
     - dash
     - disk-inventory-x
+
 
 - name: Ensure local hostname is in /etc/hosts
   sudo: yes
