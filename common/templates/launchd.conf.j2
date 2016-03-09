@@ -23,5 +23,5 @@ setenv M2_HOME /usr/local/opt/maven/libexec
 setenv GRADLE_HOME /usr/local/opt/gradle/libexec
 setenv GRADLE_OPTS -Dfile.encoding=utf-8
 
-#setenv EPAGES_CONFIG /Users/jfischer/dev/git/epagesj/subprojects/datasource/src/test/resources
-setenv EPAGES_CONFIG /Users/jfischer/EPAGES_CONFIG
+#setenv EPAGES_CONFIG /Users/{{ ansible_env.DEV_USERNAME }}/dev/git/epagesj/subprojects/datasource/src/test/resources
+setenv EPAGES_CONFIG /Users/{{ ansible_env.DEV_USERNAME }}/EPAGES_CONFIG

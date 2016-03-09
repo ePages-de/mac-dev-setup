@@ -5,5 +5,7 @@ Session.vim
 *~
 .idea
 *.iml
+*.retry
+.personalised_settings.sh
 
 .vagrant

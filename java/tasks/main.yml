@@ -2,4 +2,4 @@
   homebrew_cask: name=java
 
 - name: Install groovy
-  homebrew: groovy
+  homebrew: name=groovy

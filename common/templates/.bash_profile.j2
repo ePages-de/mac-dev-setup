@@ -19,6 +19,7 @@ function prompt_command() {
 PROMPT_COMMAND=prompt_command
 
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export M2_HOME=/usr/local/opt/maven/libexec
 export GRADLE_HOME=/usr/local/opt/gradle/libexec
@@ -32,8 +33,8 @@ eval "$(docker-machine env docker-vm)"
 export DOCKER_HOSTNAME=$(echo "$DOCKER_HOST" | sed -E 's|(.*//)?([^/:]*).*|\2|g')
 export DOCKER_IP=$(echo "$DOCKER_HOST" | sed -E 's|(.*//)?([^/:]*).*|\2|g')
 
-export EPAGES_CONFIG=/Users/jfischer/EPAGES_CONFIG
-export CONFIG_SERVER_REPO=/Users/jfischer/dev/git/ng/ng-config-repo
+export EPAGES_CONFIG=/Users/{{ ansible_env.DEV_USERNAME }}/EPAGES_CONFIG
+export CONFIG_SERVER_REPO=/Users/{{ ansible_env.DEV_USERNAME }}/dev/git/ng/ng-config-repo
 export SPRING_CLOUD_CONFIG_URI=http://${DOCKER_IP}:8888
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
