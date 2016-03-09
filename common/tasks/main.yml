@@ -28,19 +28,19 @@
     - bash-completion
     - imagemagick
     - httpie
-    - cowsay
     - ssh-copy-id
-    - ffmpeg
-    - lame
     - watch
     - nmap
-    - gifsicle
     - sysdig
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}
   with_items:
     - hipchat
+    - adium
+    - teamviewer
+    - skype
+    - google-hangouts
     - firefox
     - thunderbird
     - google-chrome
@@ -48,28 +48,11 @@
     - iterm2
     - sublime-text
     - macdown
-    - skype
-    - disk-inventory-x
-    - dash
-    - teamviewer
-    - spotify
-    - deezer
-    - boxcryptor-classic
-    - vlc
-    - libreoffice
+    - atom
     - dropbox
     - google-drive
-    - tunnelblick
-    - real-vnc
-    - mpeg-streamclip
-    - adium
-    - burn
-    - google-hangouts
-    - audacity210
-    - imageoptim
-    - logitech-harmony
-    - logitech-myharmony
-    - atom
+    - dash
+    - disk-inventory-x
 
 - name: Ensure local hostname is in /etc/hosts
   sudo: yes
