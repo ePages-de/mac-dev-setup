@@ -90,12 +90,14 @@
 
 
 - name: generate launchd.conf from launchd.conf.j2
-  template: src=launchd.conf.j2 dest=/tmp/launchd.conf
+  sudo: yes
+  template: src=launchd.conf.j2 dest=/etc/launchd.conf
 
   
-- name: Ensure launchd.conf is present
-  sudo: yes
-  copy:
-    src: /tmp/launchd.conf
-    dest: "/etc/launchd.conf"
+#TODO disabled temporarely  
+#- name: Ensure launchd.conf is present
+#  sudo: yes
+#  copy:
+#    src: /tmp/launchd.conf
+#    dest: "/etc/launchd.conf"#
 
