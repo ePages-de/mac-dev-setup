@@ -13,4 +13,4 @@
   homebrew_cask: name=gitup
 
 - name: generate .gitconfig from .gitconfig.j2
-  template: src=.gitconfig.j2 dest=~/.gitconfig
+  template: force=no backup=yes src=.gitconfig.j2 dest=~/.gitconfig
