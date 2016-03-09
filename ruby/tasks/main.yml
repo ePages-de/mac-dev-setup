@@ -3,19 +3,6 @@
     src: .gemrc
     dest: "~/.gemrc"
 
-
-#jfischer ~/dev/git/local-provision (master)$ ruby -v
-#ruby 2.0.0p481 (2014-05-08 revision 45883) [universal.x86_64-darwin14]
-
 - name: Install RVM
   sudo: no
-  #shell: curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --rails
   shell: curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --ruby
-
-#jfischer ~/dev/git/local-provision (master)$ ruby -v
-#ruby 2.2.0p0 (2014-12-25 revision 49005) [x86_64-darwin14]
-
-# source ~/.rvm/scripts/rvm
-
-# .bash_profile
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
