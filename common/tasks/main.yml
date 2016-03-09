@@ -75,29 +75,10 @@
 #  sudo: yes
 #  shell: scutil --set ComputerName jfischer-mac
 
-
-
-
-# TODO remove
-#- name: Ensure .bash_profile is present
-#  sudo: no
-#  copy:
-#    src: .bash_profile
-#    dest: "~/.bash_profile"
-#
 - name: generate .bash_profile from .bash_profile.j2
   template: src=.bash_profile.j2 dest=~/.bash_profile
-
 
 - name: generate launchd.conf from launchd.conf.j2
   sudo: yes
   template: src=launchd.conf.j2 dest=/etc/launchd.conf
-
-  
-#TODO disabled temporarely  
-#- name: Ensure launchd.conf is present
-#  sudo: yes
-#  copy:
-#    src: /tmp/launchd.conf
-#    dest: "/etc/launchd.conf"#
 
