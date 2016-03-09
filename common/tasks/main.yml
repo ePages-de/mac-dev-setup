@@ -37,6 +37,10 @@
   homebrew_cask: name={{item}}
   with_items:
     - hipchat
+    - adium
+    - teamviewer
+    - skype
+    - google-hangouts
     - firefox
     - thunderbird
     - google-chrome
@@ -44,16 +48,11 @@
     - iterm2
     - sublime-text
     - macdown
-    - disk-inventory-x
-    - dash
-    - teamviewer
+    - atom
     - dropbox
     - google-drive
-    - tunnelblick
-    - real-vnc
-    - adium
-    - google-hangouts
-    - atom
+    - dash
+    - disk-inventory-x
 
 - name: Ensure local hostname is in /etc/hosts
   sudo: yes
