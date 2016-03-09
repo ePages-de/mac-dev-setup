@@ -4,6 +4,13 @@
 
 set -e
 
+export SETTINGS=./.personalised_settings.sh
+
+source ./init_settings.sh $SETTINGS
+source $SETTINGS
+
+echo "Using personalised dev setting from $SETTINGS"
+
 export PATH=/usr/local/bin:$PATH
 
 if [[ ! -x /usr/bin/gcc ]]; then
@@ -25,6 +32,8 @@ if [[ ! -x /usr/local/bin/ansible ]]; then
   echo "Info | Install | ansible"
   brew install ansible
 fi
+
+echo "Running ansible-playbook script..."
 
 ansible-playbook -K -i hosts -c local main.yml
 

@@ -16,10 +16,16 @@
 #  sudo: no
 #  gem: name=lolcommits state=present
 
-- name: Ensure .gitconfig is present
-  copy:
-    src: .gitconfig
-    dest: "~/.gitconfig"
+#TODO remove
+#- name: Ensure .gitconfig is present
+#  copy:
+#    src: .gitconfig
+#    dest: "~/.gitconfig"
+#
+
+- name: generate .gitconfig from .gitconfig.j2
+  template: src=.gitconfig.j2 dest=~/.gitconfig
+
 
 - name: Ensure .gitignore is present
   copy:
