@@ -18,11 +18,7 @@ function prompt_command() {
 }
 PROMPT_COMMAND=prompt_command
 
-#export EPAGES_CONFIG=/Users/jfischer/dev/git/epagesj/subprojects/datasource/src/test/resources
-export EPAGES_CONFIG=/Users/jfischer/EPAGES_CONFIG
-
-export CONFIG_SERVER_REPO=/Users/jfischer/dev/git/ng/ng-config-repo
-
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export M2_HOME=/usr/local/opt/maven/libexec
 export GRADLE_HOME=/usr/local/opt/gradle/libexec
@@ -32,13 +28,13 @@ export LOLCOMMITS_DELAY=2
 
 export APT_PROXY=http://192.168.59.4:8000
 
-#To connect the Docker client to the Docker daemon, please set:
-#export DOCKER_HOST=tcp://192.168.59.103:2376
-#export DOCKER_CERT_PATH=/Users/jfischer/.boot2docker/certs/boot2docker-vm
-#export DOCKER_TLS_VERIFY=1
 eval "$(docker-machine env docker-vm)"
 export DOCKER_HOSTNAME=$(echo "$DOCKER_HOST" | sed -E 's|(.*//)?([^/:]*).*|\2|g')
 export DOCKER_IP=$(echo "$DOCKER_HOST" | sed -E 's|(.*//)?([^/:]*).*|\2|g')
+
+export EPAGES_CONFIG=/Users/jfischer/EPAGES_CONFIG
+export CONFIG_SERVER_REPO=/Users/jfischer/dev/git/ng/ng-config-repo
+export SPRING_CLOUD_CONFIG_URI=http://${DOCKER_IP}:8888
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
