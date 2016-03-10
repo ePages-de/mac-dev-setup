@@ -12,22 +12,5 @@
 - name: Install GitUp
   homebrew_cask: name=gitup
 
-#- name: Install lolcommits
-#  sudo: no
-#  gem: name=lolcommits state=present
-
-#TODO remove
-#- name: Ensure .gitconfig is present
-#  copy:
-#    src: .gitconfig
-#    dest: "~/.gitconfig"
-#
-
 - name: generate .gitconfig from .gitconfig.j2
-  template: src=.gitconfig.j2 dest=~/.gitconfig
-
-
-- name: Ensure .gitignore is present
-  copy:
-    src: .gitignore
-    dest: "~/.gitignore"
+  template: force=no backup=yes src=.gitconfig.j2 dest=~/.gitconfig

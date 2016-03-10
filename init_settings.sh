@@ -24,11 +24,13 @@ echo "==========================================================================
 echo ""
 
 read -p "Please specify your username for this machine:" DEV_USERNAME
+read -p "Please specify your desired hostname for this machine:" DEV_HOSTNAME
 read -p "Please specify your email:" DEV_EMAIL
 read -p "Please specify your first and last name :" DEV_FULLNAME
 
 echo "#!/bin/bash" > $SETTINGS
 echo "export DEV_USERNAME=$DEV_USERNAME" >> $SETTINGS
+echo "export DEV_HOSTNAME=$DEV_HOSTNAME" >> $SETTINGS
 echo "export DEV_EMAIL=$DEV_EMAIL" >> $SETTINGS
 echo "export DEV_FULLNAME=$DEV_FULLNAME" >> $SETTINGS
 

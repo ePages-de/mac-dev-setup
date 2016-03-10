@@ -54,50 +54,27 @@
     - dash
     - disk-inventory-x
 
-
-# TODO remove since this is not necessary
-#
-#- name: Ensure local hostname is in /etc/hosts
-#  sudo: yes
-#  lineinfile:
-#    dest: "/etc/hosts"
-#    line: "127.0.0.1 jfischer-mac"
-#
-#- name: Ensure HostName is set
-#  sudo: yes
-#  shell: scutil --set HostName jfischer-mac
-#
-#- name: Ensure LocalHostName is set
-#  sudo: yes
-#  shell: scutil --set LocalHostName jfischer-mac
-#
-#- name: Ensure ComputerName is set
-#  sudo: yes
-#  shell: scutil --set ComputerName jfischer-mac
-
-
-
-
-# TODO remove
-#- name: Ensure .bash_profile is present
-#  sudo: no
-#  copy:
-#    src: .bash_profile
-#    dest: "~/.bash_profile"
-#
 - name: generate .bash_profile from .bash_profile.j2
   template: src=.bash_profile.j2 dest=~/.bash_profile
-
 
 - name: generate launchd.conf from launchd.conf.j2
   sudo: yes
   template: src=launchd.conf.j2 dest=/etc/launchd.conf
 
-  
-#TODO disabled temporarely  
-#- name: Ensure launchd.conf is present
-#  sudo: yes
-#  copy:
-#    src: /tmp/launchd.conf
-#    dest: "/etc/launchd.conf"#
+- name: Ensure local hostname is in /etc/hosts
+  sudo: yes
+  lineinfile:
+    dest: "/etc/hosts"
+    line: "127.0.0.1 {{ ansible_env.DEV_HOSTNAME }}"
 
+- name: Ensure HostName is set
+  sudo: yes
+  shell: scutil --set HostName {{ ansible_env.DEV_HOSTNAME }}
+
+- name: Ensure LocalHostName is set
+  sudo: yes
+  shell: scutil --set LocalHostName {{ ansible_env.DEV_HOSTNAME }}
+
+- name: Ensure ComputerName is set
+  sudo: yes
+  shell: scutil --set ComputerName {{ ansible_env.DEV_HOSTNAME }}
