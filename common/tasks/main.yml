@@ -53,6 +53,7 @@
     - google-drive
     - dash
     - disk-inventory-x
+    - keepassx
 
 - name: generate .bash_profile from .bash_profile.j2
   template: src=.bash_profile.j2 dest=~/.bash_profile
