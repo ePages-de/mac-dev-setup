@@ -1,7 +1,7 @@
 ---
 
 - name: Install heroku toolbelt
-  homebrew: name=heroku-toolbelt
+  homebrew: name=heroku
 
 - name: Install foreman
   sudo: yes
