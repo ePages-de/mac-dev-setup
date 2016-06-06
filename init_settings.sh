@@ -25,10 +25,10 @@ echo "To initialize the provisioning scripts please input yor data, which will b
 echo "============================================================================================================"
 echo ""
 
-read -p "Please specify your username for this machine:" DEV_USERNAME
-read -p "Please specify your desired hostname for this machine:" DEV_HOSTNAME
-read -p "Please specify your email:" DEV_EMAIL
-read -p "Please specify your first and last name:" DEV_FULLNAME
+read -p "Please specify your username for this machine: " DEV_USERNAME
+read -p "Please specify your desired hostname for this machine: " DEV_HOSTNAME
+read -p "Please specify your email: " DEV_EMAIL
+read -p "Please specify your first and last name: " DEV_FULLNAME
 
 echo "#!/bin/bash" > $SETTINGS
 echo "export DEV_USERNAME=$DEV_USERNAME" >> $SETTINGS
