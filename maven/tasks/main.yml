@@ -11,13 +11,12 @@
     src: settings.xml
     dest: "~/.m2/settings.xml"
 
-- name: Ensure maven settings without mirror are present
+- name: Ensure maven settings with mirror are present
   copy:
-    src: settings-nomirror.xml
-    dest: "~/.m2/settings-nomirror.xml"
+    src: settings-mirror.xml
+    dest: "~/.m2/settings-mirror.xml"
 
 #- name: Ensure mavenrc is present
 #  copy:
 #   src: mavenrc
 #    dest: "~/.mavenrc"
-
