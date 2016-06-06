@@ -1,8 +1,0 @@
-- name: Ensure ~/.gemrc is present
-  copy:
-    src: .gemrc
-    dest: "~/.gemrc"
-
-- name: Install RVM
-  sudo: no
-  shell: curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --ruby

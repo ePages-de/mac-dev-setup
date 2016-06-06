@@ -1,7 +1,6 @@
 - hosts: local
   roles:
     - common
-    - ruby
     - git
     - java
     - maven
