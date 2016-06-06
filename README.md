@@ -9,11 +9,13 @@ cd ~/Downloads/mac-dev-setup-master
 
 The script will ask for some variables and will store their content in `./.personalised_settings.sh` for later re-use.
 
-The installation procedure will download many packages (about 2.5GB of files) and you will need to enter your root password again from time to time.
+The installation procedure will download many packages (about 2.5GB of files) and you will need to enter your root password from time to time.
+Some packages (notably XCode CLI Tools and TeamViewer) will prompt you with some installation window on their own, which you will need to process manually.
 
 # Manual steps afterwards
 
-There are still some manual steps left in order to finalize the installation. Some of these could surely be automated as well (pull request appreciated!), while other's don't.
+There are still some manual steps left in order to finalize the installation.
+Some of these could surely be automated as well (pull requests appreciated!), while other's don't.
 
 ## Install VirtualBox Guest Additions
 
@@ -23,6 +25,45 @@ vagrant plugin install vagrant-vbguest
 
 ## Create docker machine
 
+Depending on your physical hardware you need to specify different values for CPU/RAM/HDD, but the general procedure works like this:
+
 ```sh
 docker-machine create --driver virtualbox --virtualbox-cpu-count 8 --virtualbox-memory 6144 --virtualbox-disk-size 60000 default
+```
+
+## Reboot
+
+It is a good idea to reboot your system afterwards to make sure all settings and environment variables are taken into account.
+
+# Switch to versioned clone of GitHub project
+
+Now that you have a running development environment you should replace your download of the zipped GitHub project with a real clone of that repository:
+
+```sh
+git clone https://github.com/ePages-de/mac-dev-setup.git
+cd mac-dev-setup
+```
+
+Don't forget to move your `./.personalised_settings.sh` into this new directory
+
+Now you can create a new branch and maintain your changes or prepare pull requests from it. Especially tweaking your `.bash_profile` is highly recommended, see for instance
+`CONFIG_SERVER_REPO` environment variable in it.
+
+```sh
+git checkout -b local
+vi common/templates/.bash_profile.j2
+```
+
+## Check JDK environment
+
+Right now only `.bash_profile` uses some dynamic approach to always set the correct `JAVA_HOME` environment variable.
+Unfortunately this is not enough for desktop applications like IntelliJ IDEA.
+These applications need their `JAVA_HOME` defined using the global `launchd` subsystem on Mac OS X.
+The template for `launchd` configuration doesn't automatically keep track if a newer version of Java has been installed,
+so from time to time you need to change it:
+
+```sh
+/usr/libexec/java_home -v 1.8
+vi common/templates/launchd.conf.j2
+./setup.sh
 ```
