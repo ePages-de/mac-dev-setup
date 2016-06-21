@@ -19,5 +19,8 @@
 - name: Install packer
   homebrew_cask: name=packer
 
-- name: Install kubernetes-cli
-  homebrew: name=kubernetes-cli
+#- name: Install kubernetes-cli
+#  homebrew: name=kubernetes-cli
+
+- name: Install google-cloud-sdk
+  homebrew_cask: name=google-cloud-sdk
