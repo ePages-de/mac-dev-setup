@@ -6,6 +6,9 @@
     - tig
     - hub
 
+- name: Install GitKraken
+  homebrew_cask: name=gitkraken
+
 - name: Install SourceTree
   homebrew_cask: name=sourcetree
 
