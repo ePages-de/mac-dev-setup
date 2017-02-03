@@ -14,10 +14,10 @@
   homebrew: name=docker-swarm
 
 - name: Install docker-compose
-  homebrew_cask: name=docker-compose
+  homebrew: name=docker-compose
 
 - name: Install packer
-  homebrew_cask: name=packer
+  homebrew: name=packer
 
 #- name: Install kubernetes-cli
 #  homebrew: name=kubernetes-cli
