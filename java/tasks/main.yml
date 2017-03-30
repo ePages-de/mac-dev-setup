@@ -1,5 +1,13 @@
 - name: Install Oracle JDK 8
   homebrew_cask: name=java
 
+- name: Read path to Oracle JDK 8
+  command: /usr/libexec/java_home -v 1.8
+  register: jdk_home
+
+- name: symlink to latest Oracle JDK 8
+  file: path=/Library/Java/JavaVirtualMachines/latest src={{jdk_home.stdout | regex_replace('(jdk.[^/]*)/.*', '\\1')}} state=link
+  become: true
+
 - name: Install groovy
   homebrew: name=groovy
