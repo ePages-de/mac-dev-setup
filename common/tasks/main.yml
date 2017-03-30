@@ -24,6 +24,7 @@
     - nmap
     - sysdig
     - jq
+    - thefuck
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}

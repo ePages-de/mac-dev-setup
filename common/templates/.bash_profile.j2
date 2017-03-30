@@ -12,6 +12,9 @@ fi
 # https://github.com/clvv/fasd
 eval "$(fasd --init auto)"
 
+# thefuck
+eval $(thefuck --alias)
+
 # display git branches in prompt
 function prompt_command() {
     PS1='\[\033[01;32m\]\u\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 " (%s)")\[\033[01;34m\]$\[\033[00m\] '
@@ -34,6 +37,10 @@ export SPRING_CLOUD_CONFIG_URI=http://${DOCKER_IP}:8888
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+# docker
+alias dclean-images='docker images -qf "dangling=true" | xargs docker rmi -f'
+alias dclean-dangling='docker volume ls -qf "dangling=true" | xargs docker volume rm'
+alias dclean-exited='docker rm -v $(docker ps -a -q -f status=exited)'
 
 # gcloud
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
