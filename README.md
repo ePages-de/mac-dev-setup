@@ -62,17 +62,3 @@ Now you can create a new branch and maintain your changes or prepare pull reques
 git checkout -b local
 vi common/templates/.bash_profile.j2
 ```
-
-## Check JDK environment
-
-Right now only `.bash_profile` uses some dynamic approach to always set the correct `JAVA_HOME` environment variable.
-Unfortunately this is not enough for desktop applications like IntelliJ IDEA.
-These applications need their `JAVA_HOME` defined using the global `launchd` subsystem on Mac OS X.
-The template for `launchd` configuration doesn't automatically keep track if a newer version of Java has been installed,
-so from time to time you need to change it:
-
-```sh
-/usr/libexec/java_home -v 1.8
-vi common/templates/launchd.conf.j2
-./setup.sh
-```
