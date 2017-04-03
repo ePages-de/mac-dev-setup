@@ -11,3 +11,6 @@
 
 - name: Install groovy
   homebrew: name=groovy
+
+- name: Install gdub
+  homebrew: name=gdub
