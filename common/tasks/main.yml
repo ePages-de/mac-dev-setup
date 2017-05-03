@@ -37,7 +37,6 @@
     - firefox
     - thunderbird
     - google-chrome
-    - google-chrome-canary
     - iterm2
     - sublime-text
     - macdown
@@ -47,6 +46,7 @@
     - dash
     - disk-inventory-x
     - keepassx
+    - mattermost
 
 - name: generate .bash_profile from .bash_profile.j2
   template: src=.bash_profile.j2 dest=~/.bash_profile
