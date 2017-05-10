@@ -33,7 +33,21 @@ if [[ ! -x /usr/local/bin/ansible ]]; then
   brew install ansible
 fi
 
+if [[ ! -x /usr/local/bin/bash ]]; then
+  echo "Info | Install | gnu bash"
+  brew install bash
+fi
+
+if [[ ! -x /usr/local/bin/ansible ]]; then
+  echo "Info | Install | gnu coreutils"
+  brew install coreutils
+fi
+
+if [[ ! -x /usr/local/bin/gnu-sed ]]; then
+  echo "Info | Install | gnu sed"
+  brew install gnu-sed
+fi
+
 echo "Running ansible-playbook script..."
 
 ansible-playbook -K -i hosts -c local main.yml
-
