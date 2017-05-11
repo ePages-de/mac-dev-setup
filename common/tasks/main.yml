@@ -25,6 +25,9 @@
     - sysdig
     - jq
     - thefuck
+    - gnu-sed
+    - coreutils
+    - bash
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}
