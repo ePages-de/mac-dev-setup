@@ -37,6 +37,9 @@ export SPRING_CLOUD_CONFIG_URI=http://${DOCKER_IP}:8888
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
 # docker
 alias dclean-images='docker images -qf "dangling=true" | xargs docker rmi -f'
 alias dclean-dangling='docker volume ls -qf "dangling=true" | xargs docker volume rm'

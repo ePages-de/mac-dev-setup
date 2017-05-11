@@ -36,4 +36,3 @@ fi
 echo "Running ansible-playbook script..."
 
 ansible-playbook -K -i hosts -c local main.yml
-
