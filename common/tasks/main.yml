@@ -28,6 +28,7 @@
     - gnu-sed
     - coreutils
     - bash
+    - shunit2
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}
