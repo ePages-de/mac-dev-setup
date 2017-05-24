@@ -35,10 +35,11 @@ docker-machine create --driver virtualbox --virtualbox-cpu-count 8 --virtualbox-
 
 It is a good idea to reboot your system afterwards to make sure all settings and environment variables are taken into account.
 
-## Lombok
+## IDE Configuration
 
 While IntelliJ has already been installed, the "Lombok" plugin is still missing to be able to start working. Hints for the
 installation process can be found on [jetbrains.com](https://www.jetbrains.com/help/idea/2016.3/installing-updating-and-uninstalling-repository-plugins.html).
+Then checkbox "Enable annotation processing" needs to be activated in the preferences.
 
 For Eclipse, please refer to the documentation on the official project homepage: [projectlombok.org](https://projectlombok.org/).
 Further, you'll need to install the [Buildship plugin](https://projects.eclipse.org/projects/tools.buildship).
