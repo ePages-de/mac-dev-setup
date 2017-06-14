@@ -28,7 +28,8 @@ export M2_HOME=/usr/local/opt/maven/libexec
 export GRADLE_HOME=/usr/local/opt/gradle/libexec
 export GRADLE_OPTS=-Dfile.encoding=utf-8
 
-eval "$(docker-machine env)"
+docker-machine status | grep -q Running
+if [[ $? -eq 0 ]]; then eval "$(docker-machine env)"; fi
 export DOCKER_HOSTNAME=$(echo "$DOCKER_HOST" | sed -E 's|(.*//)?([^/:]*).*|\2|g')
 export DOCKER_IP=$(echo "$DOCKER_HOST" | sed -E 's|(.*//)?([^/:]*).*|\2|g')
 
