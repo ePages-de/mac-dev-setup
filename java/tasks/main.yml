@@ -1,3 +1,6 @@
+- name: Add caskroom versions repository
+  homebrew_tap: name=caskroom/versions
+
 - name: Install Oracle JDK 8
   homebrew_cask: name=java8
 
