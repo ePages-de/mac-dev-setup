@@ -5,6 +5,9 @@
 - name: Install Intellij IDEA Community Edition
   homebrew_cask: name=intellij-idea-ce
 
+- name: Install Jetbrains Toolbox
+  homebrew_cask: name=jetbrains-toolbox
+
 #- name: Install Intellij IDEA Ultimate Edition EAP
 #  homebrew_cask: name=intellij-idea-eap
 
