@@ -34,46 +34,39 @@
 - name: Install common binary tools
   homebrew_cask: name={{item}}
   with_items:
-    - hipchat
-    - adium
-    - teamviewer
-    - skype
     - google-hangouts
     - firefox
-    - thunderbird
     - google-chrome
     - iterm2
     - sublime-text
     - macdown
     - atom
-    - dropbox
-    - google-drive
     - dash
     - disk-inventory-x
     - keepassx
-    - mattermost
+
 
 - name: generate .bash_profile from .bash_profile.j2
   template: src=.bash_profile.j2 dest=~/.bash_profile
 
 - name: generate launchd.conf from launchd.conf.j2
-  sudo: yes
+  become: yes
   template: src=launchd.conf.j2 dest=/etc/launchd.conf
 
 - name: Ensure local hostname is in /etc/hosts
-  sudo: yes
+  become: yes
   lineinfile:
     dest: "/etc/hosts"
     line: "127.0.0.1 {{ ansible_env.DEV_HOSTNAME }}"
 
 - name: Ensure HostName is set
-  sudo: yes
+  become: yes
   shell: scutil --set HostName {{ ansible_env.DEV_HOSTNAME }}
 
 - name: Ensure LocalHostName is set
-  sudo: yes
+  become: yes
   shell: scutil --set LocalHostName {{ ansible_env.DEV_HOSTNAME }}
 
 - name: Ensure ComputerName is set
-  sudo: yes
+  become: yes
   shell: scutil --set ComputerName {{ ansible_env.DEV_HOSTNAME }}

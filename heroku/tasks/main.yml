@@ -5,5 +5,5 @@
 
 # currently disabled due to 'Unable to require openssl, install OpenSSL and rebuild ruby (preferred) or use non-HTTPS sources'
 #- name: Install foreman
-#  sudo: yes
+#  become: yes
 #  gem: name=foreman state=present
