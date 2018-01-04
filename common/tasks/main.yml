@@ -33,6 +33,7 @@
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}
+  ignore_errors: yes
   with_items:
     - google-hangouts
     - firefox
@@ -44,6 +45,7 @@
     - dash
     - disk-inventory-x
     - keepassx
+    - mattermost
 
 
 - name: generate .bash_profile from .bash_profile.j2
