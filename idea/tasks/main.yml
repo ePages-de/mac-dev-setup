@@ -8,20 +8,14 @@
 - name: Install Jetbrains Toolbox
   homebrew_cask: name=jetbrains-toolbox
 
-#- name: Install Intellij IDEA Ultimate Edition EAP
-#  homebrew_cask: name=intellij-idea-eap
-
-#- name: Install Intellij IDEA Community Edition EAP
-#  homebrew_cask: name=intellij-idea-ce-eap
-
 - name: Ensure IDEAs preferences directory is present
   file:
-    path: "~/Library/Preferences/IntelliJIdea14"
+    path: "~/Library/Preferences/IntelliJIdea2018.1"
     state: directory
 
 - name: Configure IDEAs JVM options
   template:
     src: idea.vmoptions.j2
-    dest: "~/Library/Preferences/IntelliJIdea14/idea.vmoptions"
+    dest: "~/Library/Preferences/IntelliJIdea2018.1/idea.vmoptions"
 
 # TODO: idea.case.sensitive.fs=true in /opt/homebrew-cask/Caskroom/intellij-idea-ce/14.1.4/IntelliJ\ IDEA\ 14\ CE.app/Contents/bin/idea.properties
