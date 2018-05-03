@@ -1,8 +1,5 @@
 ---
 
-- name: Add homebrew versions repo
-  homebrew_tap: tap=homebrew/versions state=present
-
 - name: Install common tools
   homebrew: name={{item}}
   with_items:
