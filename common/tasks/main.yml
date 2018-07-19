@@ -27,6 +27,7 @@
     - bash
     - shunit2
     - vault
+    - gpg
 
 - name: Install common binary tools
   homebrew_cask: name={{item}}

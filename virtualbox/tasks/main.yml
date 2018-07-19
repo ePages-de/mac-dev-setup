@@ -24,3 +24,6 @@
 
 - name: Install google-cloud-sdk
   homebrew_cask: name=google-cloud-sdk
+
+- name: Install Kubernetes Helm
+  homebrew: name=kubernetes-helm
